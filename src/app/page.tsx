@@ -1,69 +1,46 @@
-import Image from "next/image";
-
-export default function Home() {
-  return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+import { Building2, House, Wrench, ClipboardCheck } from "lucide-react";
+import { Container, Section, Heading, Action, TextLink, InfoGrid, Steps, CTA } from "@/components/marketing/Primitives";
+import { Photo } from "@/components/marketing/Photo";
+import { PropertyServicesSection } from "@/components/sections/PropertyServicesSection";
+import { ReviewsSection } from "@/components/sections/ReviewsSection";
+import { pageMetadata } from "@/lib/site";
+export const metadata = pageMetadata("Engineering, Construction & Home Services", "NAHTREEK connects homeowners and property owners with civil engineers and skilled service professionals for planning, construction, renovation, repairs and maintenance.", "/");
+const categories = [
+  { icon: Building2, title: "Engineering & Structural", copy: "Structural consultation, planning, inspections and technical guidance.", href: "/services/structural-consultation" },
+  { icon: House, title: "Construction & Renovation", copy: "New construction, extensions, remodelling and site-related work.", href: "/services" },
+  { icon: Wrench, title: "Home Services", copy: "Electrical, plumbing, carpentry, painting and everyday repairs.", href: "/services" },
+  { icon: ClipboardCheck, title: "Inspection & Maintenance", copy: "Waterproofing, condition assessment and ongoing care.", href: "/services/property-audit" },
+];
+export default function HomePage() {
+  return <>
+    <section className="hero dark"><Container><div className="split">
+      <div><span className="eyebrow">Engineering, Construction & Home Services</span>
+        <h1>Build Better.<span>Connect Smarter<span className="accent-period">.</span></span></h1>
+        <p className="intro">NAHTREEK connects homeowners and property owners with civil engineers and skilled service professionals for planning, construction, renovation, repairs and maintenance.</p>
+        <div className="actions"><Action href="/services">Explore Services</Action><Action href="/how-it-works" variant="outline">How NAHTREEK Works</Action></div>
+        <div className="hero-tags"><span>Plan with clarity</span><span>Build with expertise</span><span>Care for your home</span></div>
+      </div>
+      <figure className="hero-photo"><Photo kind="home" priority /><figcaption>From your first plan to a home that works for you.</figcaption></figure>
+    </div></Container></section>
+    <Section tone="white"><Heading eyebrow="Start with what you need" title="What can NAHTREEK help you with?" />
+      <div className="category-grid">{categories.map(({icon: Icon, title, copy, href})=><article key={title}><div className="icon-tile"><Icon aria-hidden="true" /></div><h3>{title}</h3><p>{copy}</p><TextLink href={href}>Explore options</TextLink></article>)}</div>
+    </Section>
+    <PropertyServicesSection featured />
+    <Section tone="white"><Heading eyebrow="How it works" title="A clear route from idea to action.">Start with the need. Discuss the expertise, scope and next step.</Heading><div className="process-flow"><Steps items={[
+      {title:"Identify the need",description:"Tell us what you want to build, improve or repair."},
+      {title:"Choose a service",description:"Explore the scope and relevant professional expertise."},
+      {title:"Send an enquiry",description:"Share your location, priorities and project stage."},
+      {title:"Agree the work",description:"Confirm suitability, deliverables, fees and timing."},
+    ]} /></div><TextLink href="/how-it-works">See all seven steps</TextLink></Section>
+    <Section tone="soft"><div className="split"><Photo kind="interior" /><div><Heading eyebrow="For property owners" title="Your home project starts here.">Building a home, renovating a space or fixing a recurring problem? Understand the service you need and prepare for a useful conversation.</Heading><Action href="/for-clients">Explore the owner journey</Action></div></div></Section>
+    <Section tone="dark"><div className="split"><div><Heading eyebrow="For engineers & skilled professionals" title="Let the right people find your expertise.">Introduce your work, service area and experience. Connect with the team about joining NAHTREEK’s developing professional network.</Heading><Action href="/for-professionals">Grow your professional presence</Action></div><Photo kind="site" /></div></Section>
+    <ReviewsSection />
+    <Section tone="warm"><Heading eyebrow="Why choose NAHTREEK" title="Better information. Better project conversations." /><InfoGrid items={[
+      {title:"Services that make sense",description:"Find help by project stage and type of work, from planning to maintenance."},
+      {title:"The right questions, early",description:"Understand relevant experience, qualifications and responsibilities before you engage."},
+      {title:"Clear scope from the start",description:"Discuss deliverables, fees and exclusions so both sides know what to expect."},
+    ]} /></Section>
+    <Section tone="white"><div className="app-announcement"><div><span className="eyebrow">Get NAHTREEK</span><h2>Your next project, closer at hand.</h2><p>Client, engineer and service-professional app experiences are in development.</p></div><div><span className="coming-soon">Coming Soon on Google Play</span><TextLink href="/contact?subject=App%20launch%20updates">Ask about launch updates</TextLink></div></div></Section>
+    <CTA title="What would you like to build or improve?" description="Tell us about your project, repair or maintenance need. Start with one clear conversation." />
+  </>;
 }
