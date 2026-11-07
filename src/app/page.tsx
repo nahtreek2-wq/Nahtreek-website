@@ -1,4 +1,3 @@
-import { BadgeCheck, CalendarCheck } from "lucide-react";
 import { Hero } from "@/components/marketing/Primitives";
 import { Photo } from "@/components/marketing/Photo";
 import { AppsSection, TrustMarquee } from "@/components/sections/AppsSection";
@@ -21,7 +20,6 @@ export default function HomePage() {
   return (
     <>
       <Hero
-        badge="Now live in preview"
         title="From plot to home,"
         accent="handled."
         intro="NAHTREEK connects you with verified civil engineers and home-service professionals — plan with AI, agree scope in-app, and track every job to handover."
@@ -33,19 +31,9 @@ export default function HomePage() {
           { value: "₹99", label: "AI planner /month" },
         ]}
         visual={
-          <>
-            <div className="hero-card">
-              <Photo kind="home" priority sizes="(max-width: 900px) 100vw, 48vw" />
-            </div>
-            <div className="hero-card-float hero-float-1">
-              <BadgeCheck aria-hidden="true" />
-              Verified engineer assigned
-            </div>
-            <div className="hero-card-float hero-float-2">
-              <CalendarCheck aria-hidden="true" />
-              Site visit booked · Tue 10 AM
-            </div>
-          </>
+          <div className="hero-card">
+            <Photo kind="home" priority sizes="(max-width: 900px) 100vw, 48vw" />
+          </div>
         }
       />
       <TrustMarquee />
@@ -60,7 +48,7 @@ export default function HomePage() {
         title="Your next project starts with a clear plan."
         description="Tell us about your property and the work you need — get an AI plan, meet verified pros, and track it all in one place."
         href="/contact"
-        label="Request preview access"
+        label="Get started"
       />
     </>
   );

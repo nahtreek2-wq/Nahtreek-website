@@ -53,9 +53,9 @@ export function AppsSection() {
         <p className="availability-note">
           <strong>
             <span className="pulse" aria-hidden="true" />
-            Now in preview
+            Available now
           </strong>
-          <span>Both apps are live with early users. Request access and be first in your city.</span>
+          <span>Both apps are live — get started today.</span>
         </p>
       </Reveal>
     </Section>

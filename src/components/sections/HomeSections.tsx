@@ -11,7 +11,7 @@ export function HomeFaqSection() {
           items={[
             [
               "Are the NAHTREEK apps live?",
-              "Yes — NAHTREEK Home and NAHTREEK Pro are live in preview with early users. Request access and the team will onboard you as your city opens.",
+              "Yes — NAHTREEK Home and NAHTREEK Pro are live. Contact us and the team will onboard you.",
             ],
             [
               "What does NAHTREEK AI actually do?",

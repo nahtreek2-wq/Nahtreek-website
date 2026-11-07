@@ -31,7 +31,7 @@ export function Footer() {
             <Logo />
             <p>
               Verified civil engineers and home-service professionals, planned
-              with AI and tracked job by job. Now live in preview.
+              with AI and tracked job by job.
             </p>
             <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
           </div>

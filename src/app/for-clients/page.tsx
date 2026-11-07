@@ -53,7 +53,7 @@ export default function ClientsPage() {
         eyebrow="NAHTREEK Home app"
         title="Everything your home project needs, in one place."
         image="living"
-        action={{ href: "/contact", label: "Request preview access" }}
+        action={{ href: "/contact", label: "Get started" }}
       >
         Whether you are building, renovating, fixing a problem or planning
         maintenance — find verified pros, plan with AI and track every job

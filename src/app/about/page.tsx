@@ -82,10 +82,10 @@ export default function AboutPage() {
       <Section tone="soft">
         <Heading
           eyebrow="Where we are today"
-          title="Live in preview. Growing city by city."
+          title="Growing city by city."
         >
-          Both apps are live with early users. Request access, plan your
-          project with AI, and be among the first to book verified pros in
+          Both apps are live. Get started, plan your
+          project with AI, and book verified pros in
           your area.
         </Heading>
         <p className="notice">

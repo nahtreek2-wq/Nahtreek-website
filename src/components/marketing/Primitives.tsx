@@ -14,15 +14,13 @@ export function Section({
   children,
   tone = "white",
   id,
-  blueprint = false,
 }: {
   children: ReactNode;
   tone?: "white" | "soft" | "warm" | "dark";
   id?: string;
-  blueprint?: boolean;
 }) {
   return (
-    <section id={id} className={`section ${tone}${blueprint ? " blueprint-bg" : ""}`}>
+    <section id={id} className={`section ${tone}`}>
       <Container>{children}</Container>
     </section>
   );
@@ -79,7 +77,6 @@ export function TextLink({ href, children }: { href: string; children: ReactNode
 }
 
 export function Hero({
-  badge,
   title,
   accent,
   intro,
@@ -88,7 +85,6 @@ export function Hero({
   stats,
   visual,
 }: {
-  badge: string;
   title: string;
   accent: string;
   intro: string;
@@ -102,10 +98,6 @@ export function Hero({
       <Container>
         <div className="split">
           <div>
-            <span className="hero-badge">
-              <span className="pulse" aria-hidden="true" />
-              {badge}
-            </span>
             <h1>
               {title} <span className="accent">{accent}</span>
             </h1>

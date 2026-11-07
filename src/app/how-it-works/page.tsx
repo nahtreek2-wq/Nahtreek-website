@@ -47,7 +47,7 @@ const steps = [
 const faqs = [
   [
     "Are the apps live?",
-    "Yes — NAHTREEK Home and NAHTREEK Pro are live in preview with early users. Bookings, chat, tracking and AI planning all work in the apps today.",
+    "Yes — NAHTREEK Home and NAHTREEK Pro are live. Bookings, chat, tracking and AI planning all work in the apps today.",
   ],
   [
     "What does NAHTREEK AI cost?",
@@ -77,7 +77,7 @@ export default function HowPage() {
         eyebrow="How it works"
         image="carpentry"
         title="A clear process, from need to finished job."
-        action={{ href: "/contact", label: "Request preview access" }}
+        action={{ href: "/contact", label: "Get started" }}
       >
         Good property decisions begin with context, relevant expertise and
         clear agreements. Here is exactly how a NAHTREEK engagement flows.
