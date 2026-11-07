@@ -4,92 +4,86 @@ import {
   Heading,
   Steps,
   CTA,
+  FAQ,
 } from "@/components/marketing/Primitives";
 import { pageMetadata } from "@/lib/site";
 export const metadata = pageMetadata(
   "How NAHTREEK works",
-  "Understand the steps from identifying a property requirement to discussing scope, engaging a professional and providing feedback.",
+  "Plan with AI, find verified engineers and pros, agree scope in-app and track every job — how a NAHTREEK engagement flows.",
   "/how-it-works",
 );
 const steps = [
   {
-    title: "Identify need",
+    title: "Plan with AI",
     description:
-      "Start with your property type, location and the work or concern you want to address.",
+      "Describe your property and the work in plain words — add photos if you like. NAHTREEK AI returns findings, urgency and a prioritised plan.",
   },
   {
-    title: "Choose service",
+    title: "Find a verified pro",
     description:
-      "Use the service guides to understand which discipline may be appropriate.",
+      "Browse engineers and service professionals by discipline, area and completed-job reviews.",
   },
   {
-    title: "Find a relevant professional",
+    title: "Raise a request",
     description:
-      "Ask about relevant experience, applicable qualifications and who will perform the work.",
+      "Share property details, photos and timeline once. Interested pros respond with written quotes.",
   },
   {
-    title: "Send an enquiry",
+    title: "Agree scope in-app",
     description:
-      "Contact the NAHTREEK team with your requirement. An enquiry does not confirm availability or create a booking.",
+      "Chat, compare quotes and lock the scope, price, schedule and exclusions before work begins.",
   },
   {
-    title: "Agree scope",
+    title: "Track the job",
     description:
-      "Discuss the scope, site access, fees, timing, exclusions and communication arrangements.",
+      "Follow visits, milestones and handover in one timeline — with a record of everything agreed.",
   },
   {
-    title: "Complete work",
+    title: "Review real work",
     description:
-      "Work and deliverables are agreed with the professional. Keep a record of progress and any changes.",
-  },
-  {
-    title: "Review experience",
-    description:
-      "Check the agreed deliverables and share factual feedback or concerns with the team.",
+      "Rate completed jobs and rebook favourites. Great work earns pros visibility across the platform.",
   },
 ];
 const faqs = [
   [
-    "Can I book or pay through this website?",
-    "No. This website provides service information and an enquiry channel. Booking, payment and scheduling tools are not live here. Agree engagement details directly before work begins.",
+    "Are the apps live?",
+    "Yes — NAHTREEK Home and NAHTREEK Pro are live in preview with early users. Bookings, chat, tracking and AI planning all work in the apps today.",
   ],
   [
-    "Are the app screens and profiles real?",
-    "They are clearly labelled product previews with sample information. They do not represent a live professional, verified credential, current price or availability.",
+    "What does NAHTREEK AI cost?",
+    "Your first 5 AI chats are free. Unlimited chats, plans and photo analysis cost ₹99/month in the Home app, cancellable anytime.",
   ],
   [
     "Does NAHTREEK certify engineering work?",
-    "No. NAHTREEK facilitates connections. Qualified professionals are responsible for their technical advice, reports, designs, inspections and certifications.",
+    "No. NAHTREEK connects you with qualified professionals and keeps engagements transparent. Technical advice, designs, inspections and certifications remain the professional's responsibility.",
   ],
   [
     "How much will a service cost?",
-    "Fees depend on the property, location and agreed scope. Ask for a written quotation and clarify exclusions, additional visits and any reporting charges.",
+    "Fees depend on the property, location and agreed scope. NAHTREEK AI helps you plan, and professionals share written quotes before any work begins.",
   ],
   [
-    "Can service professionals express interest?",
-    "Yes. Engineers, consultants and property-service professionals can contact the team with their discipline, experience and service area.",
+    "Can service professionals join?",
+    "Yes. Engineers, consultants and property-service professionals can apply through the contact page. Every profile is reviewed before it appears in discovery.",
   ],
   [
     "What should I do for an urgent safety issue?",
-    "Do not rely on this enquiry channel for emergencies. Contact appropriate local emergency services or a qualified local professional for urgent assistance.",
+    "Do not rely on an enquiry for emergencies. Contact local emergency services or a qualified local professional immediately for anything structurally unsafe, sparking, leaking gas or flooding.",
   ],
-];
+] as [string, string][];
 export default function HowPage() {
   return (
     <>
       <PageHero
         eyebrow="How it works"
         image="carpentry"
-        title="A clear process, from need to next step."
-        action={{ href: "/services", label: "Explore services" }}
+        title="A clear process, from need to finished job."
+        action={{ href: "/contact", label: "Request preview access" }}
       >
-        Good property decisions begin with context, relevant expertise and clear
-        agreements. Here is a practical guide to the engagement journey.
+        Good property decisions begin with context, relevant expertise and
+        clear agreements. Here is exactly how a NAHTREEK engagement flows.
       </PageHero>
       <Section tone="white">
-        <div className="process-flow process-seven">
-          <Steps items={steps} />
-        </div>
+        <Steps items={steps} />
       </Section>
       <Section tone="soft">
         <div className="container narrow">
@@ -97,12 +91,7 @@ export default function HowPage() {
             eyebrow="Questions, answered"
             title="Before you get started"
           />
-          {faqs.map(([q, a]) => (
-            <details className="faq" key={q}>
-              <summary>{q}</summary>
-              <p>{a}</p>
-            </details>
-          ))}
+          <FAQ items={faqs} />
         </div>
       </Section>
       <CTA />

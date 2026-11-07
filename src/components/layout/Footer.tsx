@@ -4,15 +4,16 @@ import { EMAIL } from "@/lib/site";
 export function Footer() {
   const groups = [
     [
-      "Explore",
-      ["Home", "/"],
-      ["Services", "/services"],
-      ["How it works", "/how-it-works"],
+      "Product",
+      ["Home app", "/for-clients"],
+      ["Pro app", "/for-professionals"],
+      ["AI project planner", "/for-clients#ai-planner"],
+      ["Pricing", "/about#plans"],
     ],
     [
-      "For you",
-      ["For clients", "/for-clients"],
-      ["For professionals", "/for-professionals"],
+      "Explore",
+      ["Services", "/services"],
+      ["How it works", "/how-it-works"],
       ["About us", "/about"],
     ],
     [
@@ -29,8 +30,8 @@ export function Footer() {
           <div className="footer-brand">
             <Logo />
             <p>
-              Connecting property needs with professional expertise. From the
-              first plan to everyday care.
+              Verified civil engineers and home-service professionals, planned
+              with AI and tracked job by job. Now live in preview.
             </p>
             <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
           </div>

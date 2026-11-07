@@ -7,28 +7,29 @@ import {
   InfoGrid,
   CheckList,
 } from "@/components/marketing/Primitives";
+import { PricingSection } from "@/components/sections/PricingSection";
 import { pageMetadata } from "@/lib/site";
 import { Photo } from "@/components/marketing/Photo";
 export const metadata = pageMetadata(
-  "For engineers & service professionals",
-  "Introduce your civil engineering or property-service expertise and express interest in the NAHTREEK platform.",
+  "NAHTREEK Pro app for engineers & professionals",
+  "Get matched jobs, manage work and earnings, and grow with Pro membership on the NAHTREEK Pro app for engineers and service teams.",
   "/for-professionals",
 );
 export default function ProfessionalsPage() {
   return (
     <>
       <PageHero
-        eyebrow="For professionals"
-        title="Grow Your Professional Presence with NAHTREEK"
+        eyebrow="NAHTREEK Pro app"
+        title="Real jobs, real visibility, real growth."
         image="roofing"
         action={{
           href: "/contact?type=professional",
-          label: "Express your interest",
+          label: "Join as a professional",
         }}
       >
-        Showcase your expertise and connect with the team about relevant enquiries.
-        We’re building a platform to help professionals communicate with clients
-        and grow their reputation.
+        NAHTREEK Pro brings matched job requests to engineers and service
+        teams — with profiles, reviews, earnings tracking and a membership
+        that rewards great work.
       </PageHero>
       <Section tone="white">
         <Heading
@@ -40,8 +41,9 @@ export default function ProfessionalsPage() {
             <Photo kind="plans" className="audience-photo" />
             <h3>Civil engineers & consultants</h3>
             <p>
-              Discuss your areas of practice, relevant projects and the
-              qualifications applicable to the work you undertake.
+              Structural work, inspections, planning and building-service
+              consultation — presented with your qualifications and track
+              record.
             </p>
             <CheckList
               items={[
@@ -55,8 +57,8 @@ export default function ProfessionalsPage() {
             <Photo kind="carpentry" className="audience-photo" />
             <h3>Skilled service professionals</h3>
             <p>
-              Introduce the services you offer, your operating area and the
-              types of project your team is equipped to handle.
+              Plumbing, electrical, painting, carpentry, masonry and
+              maintenance — matched to jobs in your operating area.
             </p>
             <CheckList
               items={[
@@ -70,59 +72,60 @@ export default function ProfessionalsPage() {
       </Section>
       <Section tone="soft">
         <Heading
-          eyebrow="Platform direction"
+          eyebrow="Why Pro"
           title="Designed around meaningful engagements."
         >
-          The professional workspace is in development. These are the
-          capabilities we aim to support, not a promise of live tools or
-          guaranteed leads.
+          No cold calling, no race to the bottom. Homeowners arrive with
+          structured requests — you respond with written quotes and build a
+          reputation on completed work.
         </Heading>
         <InfoGrid
           items={[
             {
-              title: "Present your expertise",
+              title: "Matched job requests",
               description:
-                "A professional profile that explains specialisms, experience and service areas.",
+                "Requests arrive with property context, photos and timeline — assess fit in minutes, not site visits.",
             },
             {
-              title: "Understand enquiries",
+              title: "Profile that sells",
               description:
-                "Relevant property context to help assess whether the work is a good fit.",
+                "Specialisms, experience, service areas and verified reviews in one place clients trust.",
             },
             {
-              title: "Manage the conversation",
+              title: "Earnings, tracked",
               description:
-                "A clearer record of requirements, agreed deliverables and professional communication.",
+                "Follow completed jobs, payouts and your membership benefits from a single dashboard.",
             },
           ]}
         />
       </Section>
-      <Section tone="white">
-        <div className="split">
+      <PricingSection />
+      <Section tone="soft">
+        <div className="split top">
           <Heading
-            eyebrow="Get involved"
+            eyebrow="Get onboarded"
             title="Start by introducing your practice."
           >
-            There is no instant registration or automatic verification claim.
-            Contact the team to discuss the current onboarding process and
-            available opportunities.
+            Every profile is reviewed before it appears in discovery. Tell us
+            about your discipline and service area — no identity documents
+            through the enquiry form.
           </Heading>
           <Steps
             items={[
               {
                 title: "Share your professional background",
                 description:
-                  "Tell us your discipline, service area and type of work. Do not send identity documents through the enquiry form.",
+                  "Tell us your discipline, service area and type of work your team is equipped to handle.",
               },
               {
-                title: "Discuss suitability",
+                title: "Get verified",
                 description:
-                  "The team can clarify current opportunities and any information needed for profile review.",
+                  "The team reviews credentials and experience. Verified members earn the badge clients look for.",
               },
               {
-                title: "Agree the next step",
+                title: "Receive jobs, grow rank",
                 description:
-                  "Confirm applicable terms and any required checks before a profile or engagement goes live.",
+                  "Matched requests land in your Pro app. Great reviews — and Pro membership — lift you higher.",
               },
             ]}
           />
@@ -135,10 +138,10 @@ export default function ProfessionalsPage() {
         </p>
       </Section>
       <CTA
-        title="Let’s learn about your expertise."
+        title="Let's learn about your expertise."
         description="Tell us what you do, where you work and the property needs you help address."
         href="/contact?type=professional"
-        label="Express your interest"
+        label="Join as a professional"
       />
     </>
   );

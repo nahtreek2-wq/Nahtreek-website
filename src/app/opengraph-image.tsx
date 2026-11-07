@@ -20,7 +20,7 @@ export default function Image() {
         <div
           style={{
             fontSize: 28,
-            color: "#F2B84B",
+            color: "#FFC107",
             letterSpacing: 6,
             display: "flex",
           }}
@@ -41,7 +41,7 @@ export default function Image() {
           style={{
             fontSize: 78,
             fontWeight: 700,
-            color: "#F2B84B",
+            color: "#FFC107",
             display: "flex",
           }}
         >

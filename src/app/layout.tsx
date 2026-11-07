@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Archivo, Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -10,14 +10,20 @@ const inter = Inter({
   variable: "--font-inter",
   display: "swap",
 });
+const archivo = Archivo({
+  subsets: ["latin"],
+  variable: "--font-display",
+  weight: ["600", "700", "800", "900"],
+  display: "swap",
+});
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "NAHTREEK | Property services & engineering",
+    default: "NAHTREEK | Civil Engineering, Home Services & AI Project Planning",
     template: "%s | NAHTREEK",
   },
   description:
-    "Explore civil engineering and property services with NAHTREEK. Discuss planning, construction, repairs and maintenance.",
+    "NAHTREEK connects homeowners with verified civil engineers and home-service professionals. Plan with NAHTREEK AI, book trusted pros, track every job.",
   icons: {
     icon: [{ url: "/images/nahtreek-favicon.png", type: "image/png" }],
   },
@@ -37,11 +43,14 @@ export default function RootLayout({
     email: EMAIL,
   };
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${inter.variable} ${archivo.variable}`}>
       <body>
         <a href="#main-content" className="skip-link">
           Skip to content
         </a>
+        <noscript>
+          <style>{`.reveal{opacity:1 !important;transform:none !important;}`}</style>
+        </noscript>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

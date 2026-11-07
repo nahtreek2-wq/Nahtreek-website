@@ -44,36 +44,43 @@ export default async function ServicePage({ params }: Props) {
         {service.description}
       </PageHero>
       <Section tone="white">
+        <nav className="breadcrumb" aria-label="Breadcrumb">
+          <Link href="/">Home</Link>
+          <span aria-hidden="true">/</span>
+          <Link href="/services">Services</Link>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">{service.title}</span>
+        </nav>
         <div className="contact-grid">
           <article>
             <Heading
               eyebrow="Service overview"
               title="Start with the right scope."
             >
-              Use this guide to prepare for a discussion with a relevant
-              professional. The exact approach depends on the property, site
-              conditions and the work required.
+              Use this guide to prepare for a discussion with a verified
+              professional — or let NAHTREEK AI turn your requirement into a
+              structured plan first.
             </Heading>
-            <h2 className="text-2xl">What can be discussed</h2>
+            <h2>What can be discussed</h2>
             <CheckList items={service.scope} />
-            <div className="mt-9">
-              <h2 className="text-2xl">When this service is useful</h2>
+            <div className="mt-4">
+              <h2>When this service is useful</h2>
               <CheckList items={service.popularFor} />
             </div>
             <p className="notice">
-              A website enquiry is not an inspection, technical recommendation
-              or confirmed booking. Any design, certification, valuation or
+              An enquiry is not an inspection, technical recommendation or
+              confirmed booking. Any design, certification, valuation or
               regulated work must be carried out by a suitably qualified
               professional.
             </p>
           </article>
           <aside className="panel">
-            <h2 className="text-2xl">What you can expect</h2>
+            <h2>What you can expect</h2>
             <CheckList
               items={[
-                "An initial discussion of your location and requirement",
-                "Clarification of the appropriate professional expertise",
-                "Agreement on scope, fees, timing and deliverables before work",
+                "AI plan from your description and photos",
+                "Verified pros matched to your requirement",
+                "Written quotes agreed in-app before work",
               ]}
             />
             <p>

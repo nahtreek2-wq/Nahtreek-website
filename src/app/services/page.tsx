@@ -3,7 +3,7 @@ import { PropertyServicesSection } from "@/components/sections/PropertyServicesS
 import { pageMetadata } from "@/lib/site";
 export const metadata = pageMetadata(
   "Engineering & Home Services",
-  "Browse civil engineering, plumbing, electrical, waterproofing, painting, carpentry and property inspection services.",
+  "Browse civil engineering, plumbing, electrical, waterproofing, painting, carpentry and property inspection services on NAHTREEK.",
   "/services",
 );
 export default function ServicesPage() {
@@ -11,17 +11,18 @@ export default function ServicesPage() {
     <>
       <PageHero
         eyebrow="Services"
-        title="Find the Right Service for Your Project"
+        title="Find the right service for your project."
         image="site"
       >
-        Explore the service scope, understand when it may help, and discuss your
-        requirements. Fees, availability and deliverables are confirmed for each
-        engagement.
+        Eight service guides across engineering, building services, finishing
+        and maintenance — each backed by verified pros, AI planning and
+        tracked delivery.
       </PageHero>
       <PropertyServicesSection showHeading={false} />
       <CTA
         title="Have a requirement that spans several services?"
-        description="Tell us about the overall project so you can discuss which expertise is needed first."
+        description="Tell us about the overall project — NAHTREEK AI will help you work out which expertise you need first."
+        label="Plan it with AI"
       />
     </>
   );

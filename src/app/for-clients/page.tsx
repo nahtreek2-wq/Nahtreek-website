@@ -7,105 +7,110 @@ import {
   InfoGrid,
   Action,
 } from "@/components/marketing/Primitives";
+import { AiShowcaseSection } from "@/components/sections/AiShowcaseSection";
 import { pageMetadata } from "@/lib/site";
 export const metadata = pageMetadata(
-  "For property owners & clients",
-  "A practical guide to finding civil engineering and property-service expertise, comparing scope and starting an enquiry.",
+  "NAHTREEK Home app for property owners",
+  "Find verified engineers and home-service pros, plan with NAHTREEK AI, chat in-app and track every job with the NAHTREEK Home app.",
   "/for-clients",
 );
 const steps = [
   {
-    title: "Discover",
+    title: "Plan with AI",
     description:
-      "Browse services by the work you need—not just a list of names.",
+      "Describe the work in plain words — optionally with site photos — and get a structured plan with findings, urgency and next steps.",
   },
   {
-    title: "Compare",
+    title: "Discover verified pros",
     description:
-      "Discuss relevant experience, qualifications, scope and exclusions before choosing.",
+      "Browse engineers and service professionals by discipline, area and real completed-job reviews.",
   },
   {
-    title: "Request",
+    title: "Raise a request",
     description:
-      "Share your property location, project stage and preferred timeline with the team.",
+      "Share property details, photos and timeline once. Interested pros respond with written quotes.",
   },
   {
-    title: "Communicate",
+    title: "Chat and agree scope",
     description:
-      "Agree who will carry out the work, what will be delivered and how changes are handled.",
+      "Discuss everything in-app and lock the scope, price and schedule before work begins.",
   },
   {
-    title: "Track",
+    title: "Track the job",
     description:
-      "Keep written records of agreed milestones and progress with the professional.",
+      "Follow visits, milestones and handover stage by stage, with a record you can revisit anytime.",
   },
   {
-    title: "Review",
+    title: "Review real work",
     description:
-      "Check the completed scope, ask questions and share factual feedback with the team.",
+      "Rate completed jobs, rebook favourites in one tap, and keep your home's full history.",
   },
 ];
 export default function ClientsPage() {
   return (
     <>
       <PageHero
-        eyebrow="For clients"
-        title="Everything Your Home Project Needs, in One Place"
+        eyebrow="NAHTREEK Home app"
+        title="Everything your home project needs, in one place."
         image="living"
-        action={{ href: "/services", label: "Explore services" }}
+        action={{ href: "/contact", label: "Request preview access" }}
       >
-        Whether you are building a new home, renovating an existing one,
-        fixing a problem or planning regular maintenance, NAHTREEK helps
-        you understand what service you need and connect with the right professional.
+        Whether you are building, renovating, fixing a problem or planning
+        maintenance — find verified pros, plan with AI and track every job
+        from your phone.
       </PageHero>
       <Section tone="white">
         <Heading
           eyebrow="More than a contact list"
-          title="Give your next conversation a better starting point."
+          title="Give your project a proper starting point."
         >
-          Referrals, search results and local groups can help you find names.
-          NAHTREEK’s service guides help you define what to ask those
-          professionals to do.
+          Referrals and search results give you names. NAHTREEK Home gives you
+          verified experts, structured plans and a written record of everything
+          agreed.
         </Heading>
         <InfoGrid
           items={[
             {
-              title: "Organised by requirement",
+              title: "Verified discovery",
               description:
-                "Explore engineering, building services, finishing and maintenance in one place.",
+                "Engineers, plumbers, electricians, painters and more — every profile reviewed before it appears.",
             },
             {
               title: "Scope before commitment",
               description:
-                "Understand typical discussion points without assuming a fixed package or price.",
+                "AI plans plus written quotes mean you agree the work, price and exclusions up front.",
             },
             {
-              title: "A useful enquiry",
+              title: "Track to handover",
               description:
-                "Share your location and project context so the next conversation can be more specific.",
+                "Requests, chats, visits and completion live in one timeline — no lost threads.",
             },
           ]}
         />
       </Section>
+      <AiShowcaseSection />
       <Section tone="soft">
-        <div className="split">
+        <div className="split top">
           <div>
             <Heading
-              eyebrow="Your engagement journey"
-              title="From discovery to a considered decision."
+              eyebrow="Your journey"
+              title="From discovery to a finished job."
             >
-              The website currently supports service discovery and enquiries.
-              Scheduling, work and progress arrangements are confirmed
-              directly—not through a live booking app.
+              Six steps, one app. Here is how a typical Home engagement flows
+              from first idea to final review.
             </Heading>
-            <Action href="/contact">Discuss your requirement</Action>
+            <div className="actions">
+              <Action href="/contact">Discuss your requirement</Action>
+            </div>
           </div>
           <Steps items={steps} />
         </div>
       </Section>
       <CTA
         title="Not sure which service you need?"
-        description="Describe the issue or idea in your own words. You can discuss the appropriate next step before committing to work."
+        description="Describe the issue in your own words — NAHTREEK AI will help you understand it before you commit to anything."
+        href="/contact"
+        label="Start with AI planning"
       />
     </>
   );

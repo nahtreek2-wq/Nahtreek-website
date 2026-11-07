@@ -13,9 +13,36 @@ export const PHOTOS = {
   carpentry: { id: "1544164560-adac3045edb2", alt: "Craftsperson using a woodworking tool on a board" },
 } as const;
 export type PhotoKind = keyof typeof PHOTOS;
-export function Photo({ kind, className = "", priority = false }: { kind: PhotoKind; className?: string; priority?: boolean }) {
-  const photo = PHOTOS[kind];
-  return <div className={`photo ${className}`}><Image src={`https://images.unsplash.com/photo-${photo.id}?auto=format&fit=crop&w=${priority ? 1400 : 900}&q=80`} alt={photo.alt} width={1400} height={1050} unoptimized loading={priority ? "eager" : "lazy"} fetchPriority={priority ? "high" : "auto"} /></div>;
+export function Photo({
+  kind,
+  className = "",
+  priority = false,
+  sizes = "(max-width: 900px) 100vw, 50vw",
+  width = 1400,
+}: {
+  kind: PhotoKind | string;
+  className?: string;
+  priority?: boolean;
+  sizes?: string;
+  /** Source width: match the rendered size (cards 800, heroes 1400). */
+  width?: number;
+}) {
+  const photo = PHOTOS[kind as PhotoKind] || PHOTOS["site"];
+  return (
+    <div className={`photo ${className}`.trim()}>
+      <Image
+        src={`https://images.unsplash.com/photo-${photo.id}?auto=format&fit=crop&w=${width}&q=70`}
+        alt={photo.alt}
+        width={width}
+        height={Math.round((width * 3) / 4)}
+        sizes={sizes}
+        loading={priority ? "eager" : "lazy"}
+        fetchPriority={priority ? "high" : "auto"}
+        decoding="async"
+        priority={priority}
+      />
+    </div>
+  );
 }
 export const SERVICE_PHOTOS: Record<string, PhotoKind> = {
   "structural-consultation": "plans", waterproofing: "roofing", "electrical-mep": "electrical", "plumbing-drainage": "plumbing", "painting-coatings": "painting", "carpentry-interiors": "carpentry", "masonry-alterations": "site", "property-audit": "living",
